@@ -4,7 +4,7 @@ class vault::install {
   $vault_bin = "${::vault::bin_dir}/vault"
 
   package { 'vault':
-    ensure  =>  '1.0.0',
+    ensure  =>  'latest',
   } ~>
   file { $vault_bin:
     owner => 'root',
