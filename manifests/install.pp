@@ -3,10 +3,8 @@
 class vault::install {
   $vault_bin = "${::vault::bin_dir}/vault"
 
-  staging::deploy { 'vault.zip':
-    source  => $::vault::download_url,
-    target  => $::vault::bin_dir,
-    creates => $vault_bin,
+  package { 'vault':
+    ensure  =>  '1.0.0',
   } ~>
   file { $vault_bin:
     owner => 'root',
