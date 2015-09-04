@@ -22,9 +22,6 @@
 #   Whether the `config_dir` should be purged before installing the
 #   generated config.
 #
-# * `download_url`
-#   URL to download the vault zip distribution from.
-#
 # * `service_name`
 #   Customise the name of the system service
 #
@@ -42,7 +39,6 @@ class vault (
   $bin_dir          = $::vault::params::bin_dir,
   $config_dir       = $::vault::params::config_dir,
   $purge_config_dir = true,
-  $download_url     = $::vault::params::download_url,
   $service_name     = $::vault::params::service_name,
   $config_hash      = {},
   $service_options  = '',
