@@ -3,6 +3,6 @@ class vault::service {
   service { $::vault::service_name:
     ensure   => running,
     enable   => true,
-    provider => 'systemd',
+    provider => 'upstart',
   }
 }
