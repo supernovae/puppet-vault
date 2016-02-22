@@ -9,4 +9,12 @@ class vault::params {
   $bin_dir      = '/usr/local/bin'
   $config_dir   = '/etc/vault'
   $service_name = 'vault'
+
+  case $operatingsystem == "CentOS" {
+    /^7.*/: {
+      $service_provider = 'systemd'
+    } else {
+      $service_provider = 'upstart'
+    }
+  }
 }
